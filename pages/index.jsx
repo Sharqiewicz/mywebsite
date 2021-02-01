@@ -10,7 +10,11 @@ export default function Home() {
         <div className="mobile__home__group">
         <h3>Strona mobilna czasowo niedostępna</h3>
         <h3>Moja stara strona</h3>
-          <div className="checkbutton__container"><button className="check__button">Zobacz</button></div>
+          <div className="checkbutton__container">
+            <a href="https://sharqi.netlify.app/" target="_blank">
+              <button className="check__button">Sprawdź</button>
+            </a>
+          </div>
         </div>
       </div>
       <div className="home__container">
@@ -26,7 +30,11 @@ export default function Home() {
               <h3>chętnie <span className="text--special">Cię nauczę!</span></h3>
             </div>
             <h2>Zobacz moje <span className="text--special">darmowe kursy</span></h2>
-            <div className="checkbutton__container"><button className="check__button">Sprawdź</button></div>
+            <div className="checkbutton__container">
+              <a href="https://www.youtube.com/channel/UCLJiABSd-uulY0TNv1wLJaA/videos" target="_blank">
+                <button className="check__button">Sprawdź</button>
+              </a>
+            </div>
           </div>
         </div>
         <Navbar/>
@@ -35,7 +43,11 @@ export default function Home() {
           <div className="description__group">
             <h2>Strona dalej w budowie</h2>
             <h3>Moja stara strona</h3>
-            <div className="checkbutton__container"><button className="check__button">Zobacz</button></div>
+            <div className="checkbutton__container">
+              <a href="https://sharqi.netlify.app/" target="_blank">
+                <button className="check__button">Zobacz</button>
+              </a>
+            </div>
           </div>
       </div>
     </>

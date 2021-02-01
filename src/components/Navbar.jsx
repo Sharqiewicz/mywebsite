@@ -15,10 +15,10 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="navbar__socials">
-                <a className="social__link"><Instagram/></a>
-                <a className="social__link"><Github/></a>
-                <a className="social__link"><Linkedin/></a>
-                <a className="social__link"><Youtube/></a>
+                <a className="social__link" target="_blank" href="https://www.instagram.com/sharqiewicz/"><Instagram/></a>
+                <a className="social__link" target="_blank" href="https://github.com/Sharqiewicz"><Github/></a>
+                <a className="social__link" target="_blank" href="https://www.linkedin.com/in/kacperszarkiewicz/"><Linkedin/></a>
+                <a className="social__link" target="_blank" href="https://www.youtube.com/channel/UCLJiABSd-uulY0TNv1wLJaA"><Youtube/></a>
             </div>
         </div>
     )
