@@ -1,11 +1,12 @@
-import styles from '../styles/Home.module.scss'
 import Navbar from '../src/components/Navbar.jsx';
-import Image from 'next/image';
-import Triangle from '../public/images/Triangle.svg';
+import Head from 'next/head'
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Cześć, tu Kacper!</title>
+      </Head>
       <div className="mobile__home__temporary">
         <div className="mobile__home__group">
         <h3>Strona mobilna czasowo niedostępna</h3>
