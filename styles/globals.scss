@@ -1,13 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 
 $dashSize: 15px;
+$themeOne:#FA1DFF;
+$themeTwo: #FFD705;
+$darkTheme: #1E1E35;
+$lightTheme: #2A2A48;
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: Righteous, sans-serif;
+  background-color: #2A2A48;
+  color: #e5e5e5;
 }
 
 a {
@@ -17,6 +23,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.text--special{
+  color: $themeTwo;
 }
 
 .navbar__dash{
@@ -42,6 +52,9 @@ a {
   padding: 15px;
   border-radius: 10px;
   margin: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 .navbar__menu{
@@ -71,4 +84,240 @@ a {
 .social__link:hover{
   cursor: pointer;
   transform: scale(1.3);
+}
+
+.home__container{
+  width:100%;
+  display: flex;
+}
+
+.home__welcome{
+  position: relative;
+  height: 95vh;
+  width: 100%;
+
+background-image: linear-gradient( 75deg, $darkTheme, $darkTheme 40%, $lightTheme 40%, $lightTheme );
+
+  .myProf__photo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: opacity 500ms ease 0s;
+    z-index: 999;
+    margin-left: 15%;
+  }
+
+  h1{
+    font-size: 62px;
+  }
+
+  display: flex;
+  align-items: center;
+}
+
+.home__myphoto{
+  left:0;
+  position: absolute;
+  bottom:0;
+  width: 55vw;
+  display: block;
+  padding: 0 !important;
+
+      display: block;
+    width: 50vw;
+    right: 30px;
+    bottom: 0px;
+    position: absolute !important;
+}
+
+.mobile__home__temporary{
+  display: none;
+}
+
+@media(min-width:1450px){
+  .home__welcome{
+    .myProf__photo{
+      width: unset;
+    }
+    .home__myphoto{
+      top: 50px;
+    }
+  }
+}
+
+.triangle__image{
+  position: absolute;
+}
+
+.checkbutton__container{
+  position: relative;
+  width: fit-content;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.check__button{
+  background-color: $themeTwo;
+  border: 0px;
+  font-family: Righteous, sans-serif !important;
+  color: #e5e5e5;
+  font-size: 32px;
+  padding: 20px 40px;
+  border-radius: 15px;
+  z-index: 1;
+  transition: 0.5s;
+
+  &::after{
+    content: "Sprawdź";
+    padding: 20px 40px;
+    left: -25px;
+    top: 25px;
+    background-color: #1E1E1E;
+    border-radius: 15px;
+    display: block;
+    position: absolute;
+    transition: 0.5s;
+    z-index: 0;
+  }
+
+  &:hover{
+    &::after{
+      left: -5px;
+      top: 5px;
+    }
+    &{
+      background-color: $themeOne;
+    }
+  }
+}
+
+
+
+
+
+.check__button:hover{
+
+}
+.check__button:hover::after{
+  cursor: pointer;
+  .check__button{
+    left: 0;
+    top: 0;
+  }
+}
+
+.check__button:hover ~ .checkbutton__container::after{
+  left: 0px;
+  top: 0px;
+  width: 200px;
+}
+
+.home__description{
+  background-color: #1E1E1E;
+  padding: 50px;
+}
+
+.home__text{
+  width: 40%;
+  margin-left: 60%;
+  h1{
+    margin: 10px 0;
+  }
+
+  .home__welcometext{
+    margin: 50px 0;
+    h3{
+      font-size: 28px;
+    }
+  }
+
+  h2{
+    font-size: 36px;
+  }
+}
+
+.home__description{
+  display: flex;
+}
+
+.description__group{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+
+    h3, h2{
+      width: 100%;
+    }
+
+    .checkbutton__container{
+      margin-left: -30px;
+
+      .check__button{
+        background-color: $themeOne;
+        &::after{
+          background-color: #2A2A48;
+          content: "Zobacz";
+        }
+
+        &:hover{
+
+          background-color: $themeTwo;
+        }
+      }
+    }
+}
+
+@media(max-width: 1200px){
+  .home__welcome h1{
+    font-size: 42px;
+  }
+
+  .home__welcometext {
+    h3{
+        font-size: 22px !important;
+    }
+  }
+  .home__text{
+    h2{
+      font-size: 26px !important;
+    }
+  }
+}
+
+@media(max-width: 1020px){
+  .home__container, .home__description{
+    display: none;
+  }
+  .mobile__home__temporary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    h3{
+      width: 100%;
+      text-align: center;
+    }
+
+    .mobile__home__group{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center;
+
+      .checkbutton__container{
+        margin: 0;
+        margin-top: 80px;
+        margin-left: -30px;
+      }
+    }
+  }
 }
