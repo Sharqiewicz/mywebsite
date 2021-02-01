@@ -33,16 +33,30 @@ a {
   width: $dashSize;
   height: $dashSize;
   border-radius: 50%;
+  transition: 0.5s;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .dash--red{
   background-color: #DE1A1A;
+  &:hover{
+  background-color: #ad1414;
+  }
 }
 .dash--yellow{
   background-color: #DED61A;
+  &:hover{
+    background-color: #918c12;
+    }
 }
 .dash--green{
   background-color: #1ADE39;
+  &:hover{
+    background-color: #108521;
+    }
 }
 
 .navbar__container{
@@ -188,6 +202,7 @@ background-image: linear-gradient( 75deg, $darkTheme, $darkTheme 40%, $lightThem
     &{
       background-color: $themeOne;
     }
+
   }
 }
 
@@ -195,8 +210,8 @@ background-image: linear-gradient( 75deg, $darkTheme, $darkTheme 40%, $lightThem
 
 
 
-.check__button:hover{
-
+.check__button:focus{
+  outline: none;
 }
 .check__button:hover::after{
   cursor: pointer;
