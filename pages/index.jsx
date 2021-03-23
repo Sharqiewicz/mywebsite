@@ -1,27 +1,33 @@
+import React, {useRef, useEffect} from 'react';
 import Navbar from '../src/components/Navbar.jsx';
 import Head from 'next/head'
+import gsap from 'gsap';
 
 export default function Home() {
+  const wrapper = useRef(null);
+
+  useEffect( () => {
+    console.log(gsap)
+    const [ elements ] = wrapper.current.children;
+    console.log(elements)
+    const myPhoto = elements.querySelector("#myPhoto");
+    const myButton = elements.querySelector("#myButton");
+
+    const all = [myPhoto, myButton];
+    console.log(myButton)
+
+    gsap.fromTo( myPhoto, { y: '+=100'}, { duration: 1, y: '-=100', autoAlpha: 1});
+
+  }, [])
   return (
-    <>
+    <div ref={wrapper}>
       <Head>
         <title>Cześć, tu Kacper!</title>
       </Head>
-      <div className="mobile__home__temporary">
-        <div className="mobile__home__group">
-        <h3>Strona mobilna czasowo niedostępna</h3>
-        <h3>Moja stara strona</h3>
-          <div className="checkbutton__container">
-            <a href="https://sharqi.netlify.app/" target="_blank">
-              <button className="check__button">Sprawdź</button>
-            </a>
-          </div>
-        </div>
-      </div>
       <div className="home__container">
         <div className="home__welcome">
           <div className="home__myphoto">
-              <img src="/images/Profilowe.png" className="myProf__photo"/>
+              <img src="/images/Profilowe.png" className="myProf__photo" id="myPhoto"/>
           </div>
           <div className="home__text">
             <h1> Cześć,</h1>
@@ -33,7 +39,7 @@ export default function Home() {
             <h2>Zobacz moje <span className="text--special">darmowe kursy</span></h2>
             <div className="checkbutton__container">
               <a href="https://www.youtube.com/channel/UCLJiABSd-uulY0TNv1wLJaA/videos" target="_blank">
-                <button className="check__button">Sprawdź</button>
+                <button className="check__button" id="myButton">Sprawdź</button>
               </a>
             </div>
           </div>
@@ -51,6 +57,6 @@ export default function Home() {
             </div>
           </div>
       </div>
-    </>
+    </div>
   )
 }
