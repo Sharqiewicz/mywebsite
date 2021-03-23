@@ -7,14 +7,12 @@ export default function Home() {
   const wrapper = useRef(null);
 
   useEffect( () => {
-    console.log(gsap)
+    console.log('%c    Cześć, witaj w konsoli :) Jak sa jakies bledy to przepraszam :)   ', "background: #f9a826; color: white;")
     const [ elements ] = wrapper.current.children;
-    console.log(elements)
     const myPhoto = elements.querySelector("#myPhoto");
     const myButton = elements.querySelector("#myButton");
 
     const all = [myPhoto, myButton];
-    console.log(myButton)
 
     gsap.fromTo( myPhoto, { y: '+=100'}, { duration: 1, y: '-=100', autoAlpha: 1});
 
